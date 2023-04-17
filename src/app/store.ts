@@ -1,5 +1,4 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
 import { offerReducer } from '../reducers/offer/offer.reducer';
 import { paymentReducer } from '../reducers/payment/payment.reducer';
 
