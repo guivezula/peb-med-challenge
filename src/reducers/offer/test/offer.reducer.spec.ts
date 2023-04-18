@@ -5,7 +5,7 @@ import { offerReducer } from '../offer.reducer';
 describe('Offer Reducer', () => {
   it('should return the initial state', () => {
     expect(offerReducer(undefined, { type: undefined })).toEqual({
-      offers: []
+      offers: [],
     });
   });
 
@@ -14,8 +14,8 @@ describe('Offer Reducer', () => {
     const state = offerReducer(undefined, action);
     expect(state).toEqual(
       expect.objectContaining({
-        offers: []
-      })
+        offers: [],
+      }),
     );
   });
 
@@ -24,21 +24,21 @@ describe('Offer Reducer', () => {
     const state = offerReducer(undefined, action);
     expect(state).toEqual(
       expect.objectContaining({
-        offers: []
-      })
+        offers: [],
+      }),
     );
   });
 
   it('should change the offers list on action fulfilled', () => {
     const action = {
       type: fetchOffers.fulfilled,
-      payload: OFFERS_DATA_MOCK
+      payload: OFFERS_DATA_MOCK,
     };
     const state = offerReducer(undefined, action);
     expect(state).toEqual(
       expect.objectContaining({
-        offers: OFFERS_DATA_MOCK
-      })
+        offers: OFFERS_DATA_MOCK,
+      }),
     );
   });
 });

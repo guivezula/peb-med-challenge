@@ -9,25 +9,25 @@ interface PaymentState {
 
 const initialState: PaymentState = {
   payment: null,
-  error: null
+  error: null,
 };
 
 export const paymentReducer = createReducer(initialState, (builder) => {
   builder.addCase(postPayment.pending, (state) => ({
     ...state,
     payment: null,
-    error: null
+    error: null,
   }));
 
   builder.addCase(postPayment.rejected, (state, action) => ({
     ...state,
     payment: null,
-    error: action.payload as PaymentError
+    error: action.payload as PaymentError,
   }));
 
   builder.addCase(postPayment.fulfilled, (state, action) => ({
     ...state,
     payment: action.payload as Payment,
-    error: null
+    error: null,
   }));
 });

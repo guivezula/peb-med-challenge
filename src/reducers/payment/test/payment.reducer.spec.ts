@@ -1,4 +1,7 @@
-import { PAYMENT_DATA_MOCK, PAYMENT_ERROR_MOCK } from '../../../constants/mocks';
+import {
+  PAYMENT_DATA_MOCK,
+  PAYMENT_ERROR_MOCK,
+} from '../../../constants/mocks';
 import { postPayment } from '../payment.actions';
 import { paymentReducer } from '../payment.reducer';
 
@@ -6,7 +9,7 @@ describe('Payment Reducer', () => {
   it('should return the initial state', () => {
     expect(paymentReducer(undefined, { type: undefined })).toEqual({
       payment: null,
-      error: null
+      error: null,
     });
   });
 
@@ -16,36 +19,36 @@ describe('Payment Reducer', () => {
     expect(state).toEqual(
       expect.objectContaining({
         payment: null,
-        error: null
-      })
+        error: null,
+      }),
     );
   });
 
   it('should change error on action rejected', () => {
     const action = {
       type: postPayment.rejected,
-      payload: PAYMENT_ERROR_MOCK
+      payload: PAYMENT_ERROR_MOCK,
     };
     const state = paymentReducer(undefined, action);
     expect(state).toEqual(
       expect.objectContaining({
         error: PAYMENT_ERROR_MOCK,
-        payment: null
-      })
+        payment: null,
+      }),
     );
   });
 
   it('should change payment on action fulfilled', () => {
     const action = {
       type: postPayment.fulfilled,
-      payload: PAYMENT_DATA_MOCK
+      payload: PAYMENT_DATA_MOCK,
     };
     const state = paymentReducer(undefined, action);
     expect(state).toEqual(
       expect.objectContaining({
         payment: PAYMENT_DATA_MOCK,
-        error: null
-      })
+        error: null,
+      }),
     );
   });
 });

@@ -19,7 +19,7 @@ export const OFFERS_DATA_MOCK: Offer[] = [
     gateway: 'iugu',
     splittable: true,
     installments: 12,
-    acceptsCoupon: true
+    acceptsCoupon: true,
   },
   {
     id: 33,
@@ -38,8 +38,8 @@ export const OFFERS_DATA_MOCK: Offer[] = [
     gateway: 'iugu',
     splittable: false,
     installments: 1,
-    acceptsCoupon: true
-  }
+    acceptsCoupon: true,
+  },
 ];
 
 export const PAYMENT_DATA_MOCK: Payment = {
@@ -53,9 +53,9 @@ export const PAYMENT_DATA_MOCK: Payment = {
   installments: 1,
   offerId: 18,
   userId: 1,
-  id: 1
+  id: 1,
 };
 
 export const PAYMENT_ERROR_MOCK: PaymentError = {
-  error: 'some error'
+  error: 'some error',
 };

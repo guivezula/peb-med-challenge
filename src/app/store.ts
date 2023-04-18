@@ -5,8 +5,8 @@ import { paymentReducer } from '../reducers/payment/payment.reducer';
 export const store = configureStore({
   reducer: {
     offer: offerReducer,
-    payment: paymentReducer
-  }
+    payment: paymentReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;

@@ -7,22 +7,22 @@ interface OfferState {
 }
 
 const initialState: OfferState = {
-  offers: []
+  offers: [],
 };
 
 export const offerReducer = createReducer(initialState, (builder) => {
   builder.addCase(fetchOffers.pending, (state) => ({
     ...state,
-    offers: []
+    offers: [],
   }));
 
   builder.addCase(fetchOffers.rejected, (state) => ({
     ...state,
-    offers: []
+    offers: [],
   }));
 
   builder.addCase(fetchOffers.fulfilled, (state, action) => ({
     ...state,
-    offers: action.payload
+    offers: action.payload,
   }));
 });

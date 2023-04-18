@@ -4,5 +4,5 @@ import { PaymentService } from './payment.service';
 
 export const postPayment = createAsyncThunk<Payment | PaymentError, Payment>(
   'payment/fetchPayment',
-  (params: Partial<Payment>) => PaymentService.paymentSubscription(params)
+  (params: Partial<Payment>) => PaymentService.paymentSubscription(params),
 );
