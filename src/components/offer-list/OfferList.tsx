@@ -8,17 +8,22 @@ interface OfferListProps {
 }
 
 const OfferList: React.FC<OfferListProps> = ({ offers, onSelect }) => {
-    const [checkedOffer, setCheckedOffer] = useState<Offer>();
+  const [checkedOffer, setCheckedOffer] = useState<Offer>();
 
-    const handleSelectedOffer = (offer: Offer) => {
-        setCheckedOffer(offer);
-        onSelect(offer);
-    }
+  const handleSelectedOffer = (offer: Offer) => {
+    setCheckedOffer(offer);
+    onSelect(offer);
+  };
   return (
     <>
-        {offers.map((offer) => (
-            <OfferCard key={offer.id} checked={!!checkedOffer && checkedOffer.id === offer.id} offer={offer} onSelect={(checked) => handleSelectedOffer(checked)} />
-        ))}
+      {offers.map((offer) => (
+        <OfferCard
+          key={offer.id}
+          checked={!!checkedOffer && checkedOffer.id === offer.id}
+          offer={offer}
+          onSelect={(checked) => handleSelectedOffer(checked)}
+        />
+      ))}
     </>
   );
 };

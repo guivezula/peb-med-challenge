@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Card, Typography, Chip, Radio } from '@mui/material';
-import "@fontsource/dm-sans";
+import '@fontsource/dm-sans';
 
 export const PlanOfferCard = styled(Card)(() => ({
   padding: 20,
@@ -32,11 +32,11 @@ export const PlanOfferTitle = styled(Typography)(() => ({
   fontSize: '14px',
   lineHeight: '18px',
   color: '#191847',
-}))
+}));
 
 export const PlanOfferPriceSection = styled.div(() => ({
   display: 'inherit',
-}))
+}));
 
 export const PlanOfferPrice = styled(Typography)(() => ({
   fontFamily: 'DM Sans',
@@ -45,7 +45,7 @@ export const PlanOfferPrice = styled(Typography)(() => ({
   fontSize: '12px',
   lineHeight: '16px',
   color: '#191847',
-}))
+}));
 
 export const PlanOfferDiscountChip = styled(Chip)(() => ({
   fontFamily: 'DM Sans',
@@ -59,7 +59,7 @@ export const PlanOfferDiscountChip = styled(Chip)(() => ({
   width: 40,
   height: 16,
   marginLeft: 12,
-}))
+}));
 
 export const PlanOfferInstallments = styled(Typography)(() => ({
   fontFamily: 'DM Sans',
@@ -69,16 +69,16 @@ export const PlanOfferInstallments = styled(Typography)(() => ({
   lineHeight: '13px',
   color: '#F5850B',
   letterSpacing: '-0.02em',
-}))
+}));
 
 export const PlanOfferRadio = styled(Radio)(() => ({
   color: '#191847',
   padding: 0,
-  "& svg": {
+  '& svg': {
     width: 16,
     heigh: 16,
   },
-  "&.Mui-checked": {
+  '&.Mui-checked': {
     color: '#191847',
   },
 }));
