@@ -2,7 +2,11 @@
   "name": "peb-med",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://fonts.google.com",
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@fontsource/dm-sans": "^4.5.9",
     "@mui/material": "^5.12.1",
     "@mui/styled-engine-sc": "^5.12.0",
     "@reduxjs/toolkit": "^1.9.4",

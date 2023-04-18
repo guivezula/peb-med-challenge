@@ -2,7 +2,7 @@ import React from 'react';
 import { Payment } from '../../models/payment.interface';
 
 interface PaymentFormProps {
-  onSubmit: () => Partial<Payment>;
+  onSubmit: (payment: Partial<Payment>) => void;
 }
 
 const PaymentForm: React.FC<PaymentFormProps> = ({ onSubmit }) => {
