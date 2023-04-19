@@ -21,7 +21,7 @@ export interface OfferCardProps {
 
 const OfferCard: React.FC<OfferCardProps> = ({ offer, checked, onSelect }) => {
   return (
-    <PlanOfferCard data-testid="offer-card" onClick={() => onSelect(offer)}>
+    <PlanOfferCard data-testid={`offer-card-${offer.id}`} onClick={() => onSelect(offer)}>
       <PlanOfferInfoSection>
         <PlanOfferTitle>{OfferMapper.title(offer)}</PlanOfferTitle>
         <PlanOfferPriceSection>

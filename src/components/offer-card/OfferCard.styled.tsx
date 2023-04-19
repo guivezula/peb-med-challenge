@@ -73,7 +73,7 @@ export const PlanOfferInstallments = styled(Typography)(() => ({
 }));
 
 export const PlanOfferRadio = styled(Radio)(() => ({
-  color: '#191847',
+  color: '#F4F3F6',
   padding: 0,
   '& svg': {
     width: 16,

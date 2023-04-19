@@ -73,7 +73,7 @@ describe('OfferCard component', () => {
 
         renderOfferCard(localProps);
 
-        const card = screen.getByTestId("offer-card");
+        const card = screen.getByTestId("offer-card-32");
         fireEvent.click(card);
 
         expect(handler).toHaveBeenCalled();

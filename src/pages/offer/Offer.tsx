@@ -42,6 +42,7 @@ const Offer: React.FC = () => {
         </Grid>
         <Grid item lg={6} md={6} sm={12}>
           <OfferList
+            email='fulano@cicrano.com.br'
             offers={offers}
             onSelect={(offer) => handleOfferSelected(offer)}
           />
