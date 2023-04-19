@@ -10,7 +10,6 @@ import { useAppDispatch } from '../../app/hooks';
 import { fetchOffers } from '../../reducers/offer/offer.actions';
 import Header from '../../components/header/Header';
 
-
 const Offer: React.FC = () => {
   const dispatch = useAppDispatch();
   const offers = useSelector(selectOffers);
@@ -43,7 +42,7 @@ const Offer: React.FC = () => {
         </Grid>
         <Grid item lg={6} md={6} sm={12}>
           <OfferList
-            email='fulano@cicrano.com.br'
+            email="fulano@cicrano.com.br"
             offers={offers}
             onSelect={(offer) => handleOfferSelected(offer)}
           />

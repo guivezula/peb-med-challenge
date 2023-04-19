@@ -1,67 +1,70 @@
-import { fireEvent, render, screen } from "@testing-library/react"
-import OfferList, { OfferListProps } from "../OfferList"
-import { OFFERS_DATA_MOCK } from "../../../constants/mocks"
+import { fireEvent, render, screen } from '@testing-library/react';
+import OfferList, { OfferListProps } from '../OfferList';
+import { OFFERS_DATA_MOCK } from '../../../constants/mocks';
 
 const renderOfferList = (props: OfferListProps) => {
-    return render(<OfferList {...props} />)
-}
+  return render(<OfferList {...props} />);
+};
 
 describe('OfferList component', () => {
-    let props: OfferListProps;
-    beforeAll(() => {
-        props = {
-            email: 'any@email.com',
-            offers: OFFERS_DATA_MOCK,
-            onSelect: jest.fn(),
-        }
-    })
+  let props: OfferListProps;
+  beforeAll(() => {
+    props = {
+      email: 'any@email.com',
+      offers: OFFERS_DATA_MOCK,
+      onSelect: jest.fn(),
+    };
+  });
 
-    test('should show header', () => {
-        renderOfferList(props);
+  test('should show header', () => {
+    renderOfferList(props);
 
-        const header = screen.getByText("Confira seu plano:");
+    const header = screen.getByText('Confira seu plano:');
 
-        expect(header).toBeInTheDocument();
-    })
+    expect(header).toBeInTheDocument();
+  });
 
-    test('should show email', () => {
-        renderOfferList(props);
+  test('should show email', () => {
+    renderOfferList(props);
 
-        const email = screen.getByText("any@email.com");
+    const email = screen.getByText('any@email.com');
 
-        expect(email).toBeInTheDocument();
-    })
+    expect(email).toBeInTheDocument();
+  });
 
-    test('should render offer list', () => {
-        renderOfferList(props);
+  test('should render offer list', () => {
+    renderOfferList(props);
 
-        const offerItemsCount = screen.getByTestId('offer-list-section').childNodes.length
-        expect(offerItemsCount).toBe(OFFERS_DATA_MOCK.length)
-    })
+    const offerItemsCount =
+      screen.getByTestId('offer-list-section').childNodes.length;
+    
+    expect(offerItemsCount).toBe(OFFERS_DATA_MOCK.length);
+  });
 
-    test('should call onSelect when a card is selected', () => {
-        const handler = jest.fn();
-        const localProps = {...props, onSelect: handler };
-        renderOfferList(localProps);
+  test('should call onSelect when a card is selected', () => {
+    const handler = jest.fn();
+    const localProps = { ...props, onSelect: handler };
+    renderOfferList(localProps);
 
-        const card = screen.getByTestId("offer-card-32");
-        fireEvent.click(card);
+    const card = screen.getByTestId('offer-card-32');
+    fireEvent.click(card);
 
-        expect(handler).toHaveBeenCalled();
-    })
-    test('should show help info', () => {
-        renderOfferList(props);
+    expect(handler).toHaveBeenCalled();
+  });
 
-        const helpInfo = screen.getByText("Sobre a cobrança");
+  test('should show help info', () => {
+    renderOfferList(props);
 
-        expect(helpInfo).toBeInTheDocument();
-    })
+    const helpInfo = screen.getByText('Sobre a cobrança');
 
-    test('should show help icon', () => {
-        renderOfferList(props);
+    expect(helpInfo).toBeInTheDocument();
+  });
 
-        const icon = screen.getByTestId("help-icon");
+  test('should show help icon', () => {
+    renderOfferList(props);
 
-        expect(icon).toBeInTheDocument();
-    })
-})
+    const icon = screen.getByTestId('help-icon');
+
+    expect(icon).toBeInTheDocument();
+  });
+});

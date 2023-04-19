@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { Offer } from '../../models/offer.interface';
 import OfferCard from '../offer-card/OfferCard';
-import { PlanOfferEmailChip, PlanOfferListContent, PlanOfferListHeader, PlanOfferListHelp, PlanOfferListHelpIcon, PlanOfferListSection } from './OfferList.syled';
+import {
+  PlanOfferEmailChip,
+  PlanOfferListContent,
+  PlanOfferListHeader,
+  PlanOfferListHelp,
+  PlanOfferListHelpIcon,
+  PlanOfferListSection,
+} from './OfferList.syled';
 
 export interface OfferListProps {
   offers: Offer[];
@@ -16,11 +23,11 @@ const OfferList: React.FC<OfferListProps> = ({ offers, email, onSelect }) => {
     setCheckedOffer(offer);
     onSelect(offer);
   };
-  
+
   return (
     <PlanOfferListContent>
-      <PlanOfferListHeader>{"Confira seu plano:"}</PlanOfferListHeader>
-      <PlanOfferEmailChip variant='outlined' label={email}/>
+      <PlanOfferListHeader>{'Confira seu plano:'}</PlanOfferListHeader>
+      <PlanOfferEmailChip variant="outlined" label={email} />
       <PlanOfferListSection data-testid="offer-list-section">
         {offers.map((offer) => (
           <OfferCard
@@ -32,7 +39,7 @@ const OfferList: React.FC<OfferListProps> = ({ offers, email, onSelect }) => {
         ))}
       </PlanOfferListSection>
       <PlanOfferListHelp>
-        {"Sobre a cobrança"}
+        {'Sobre a cobrança'}
         <PlanOfferListHelpIcon data-testid="help-icon" />
       </PlanOfferListHelp>
     </PlanOfferListContent>
