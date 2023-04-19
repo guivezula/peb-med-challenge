@@ -14,6 +14,7 @@ export const PlanOfferCard = styled(Card)(() => ({
   flexDirection: 'row',
   boxSizing: 'border-box',
   margin: '12px 0px',
+  cursor: 'pointer',
 }));
 
 export const PlanOfferInfoSection = styled.section(() => ({

@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { Offer } from '../../models/offer.interface';
 import {
   PlanOfferCard,
@@ -12,9 +12,8 @@ import {
   PlanOfferTitle,
 } from './OfferCard.styled';
 import { OfferMapper } from './OfferCard.mapper';
-import { Radio } from '@mui/material';
 
-interface OfferCardProps {
+export interface OfferCardProps {
   offer: Offer;
   checked: boolean;
   onSelect: (checked: Offer) => void;
@@ -22,12 +21,13 @@ interface OfferCardProps {
 
 const OfferCard: React.FC<OfferCardProps> = ({ offer, checked, onSelect }) => {
   return (
-    <PlanOfferCard>
+    <PlanOfferCard data-testid="offer-card" onClick={() => onSelect(offer)}>
       <PlanOfferInfoSection>
         <PlanOfferTitle>{OfferMapper.title(offer)}</PlanOfferTitle>
         <PlanOfferPriceSection>
           <PlanOfferPrice>{OfferMapper.price(offer)}</PlanOfferPrice>
           <PlanOfferDiscountChip
+            data-testid="discount"
             size="small"
             label={OfferMapper.discount(offer)}
           />
@@ -37,7 +37,7 @@ const OfferCard: React.FC<OfferCardProps> = ({ offer, checked, onSelect }) => {
         </PlanOfferInstallments>
       </PlanOfferInfoSection>
       <PlanOfferRadioSection>
-        <PlanOfferRadio checked={checked} onChange={() => onSelect(offer)} />
+        <PlanOfferRadio checked={checked} />
       </PlanOfferRadioSection>
     </PlanOfferCard>
   );
