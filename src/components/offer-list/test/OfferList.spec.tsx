@@ -37,7 +37,7 @@ describe('OfferList component', () => {
 
     const offerItemsCount =
       screen.getByTestId('offer-list-section').childNodes.length;
-    
+
     expect(offerItemsCount).toBe(OFFERS_DATA_MOCK.length);
   });
 
