@@ -2,9 +2,6 @@ import styled from '@emotion/styled';
 import { Button, TextField } from '@mui/material';
 
 export const PaymentFormContent = styled.div(() => ({
-  fontFamily: 'DM Sans',
-  fontStyle: 'normal',
-  fontWeight: 400,
   width: 330,
   '@media (max-width: 768px)': {
     marginTop: '40px',
@@ -12,6 +9,8 @@ export const PaymentFormContent = styled.div(() => ({
 }));
 
 export const PaymentFormHeader = styled.h1(() => ({
+  fontFamily: 'DM Sans',
+  fontStyle: 'normal',
   fontWeight: 400,
   fontSize: '20px',
   lineHeight: '26px',
@@ -22,6 +21,8 @@ export const PaymentFormHeader = styled.h1(() => ({
 }));
 
 export const PaymentFormSubHeader = styled.h2(() => ({
+  fontFamily: 'DM Sans',
+  fontStyle: 'normal',
   fontWeight: 400,
   fontSize: '16px',
   lineHeight: '21px',
@@ -50,15 +51,26 @@ export const PaymentFormInlineFieldsSection = styled.div(() => ({
 }));
 
 export const FormTextField = styled(TextField)({
+  fontFamily: 'DM Sans',
+  fontStyle: 'normal',
+  fontWeight: 400,
   '& label.MuiInputLabel-root': {
     color: '#727272',
   },
   '& .MuiInputBase-input': {
     borderBottom: '1px solid #F4F3F6',
   },
+  '& .MuiFormLabel-root': {
+    fontFamily: 'DM Sans',
+    fontStyle: 'normal',
+    fontWeight: 400,
+  },
 });
 
 export const FormButton = styled(Button)({
+  fontFamily: 'DM Sans',
+  fontStyle: 'normal',
+  fontWeight: 400,
   color: 'white',
   backgroundColor: '#191847',
   borderRadius: 25,
