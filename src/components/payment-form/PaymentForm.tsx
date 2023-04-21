@@ -150,7 +150,6 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ offer, onSubmit }) => {
       <FormButton
         data-testid="button-submit"
         fullWidth
-        type="submit"
         variant="contained"
         onClick={handler}
       >
