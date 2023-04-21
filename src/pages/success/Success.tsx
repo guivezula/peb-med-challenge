@@ -78,7 +78,10 @@ const Success: React.FC = () => {
           </SuccessUserCardItem>
         </SuccessUserCard>
         <SuccessManagementLink>{'Gerenciar assinatura'}</SuccessManagementLink>
-        <SuccessHomeButton data-testid="success-button" onClick={() => resetStatesHandler()}>
+        <SuccessHomeButton
+          data-testid="success-button"
+          onClick={() => resetStatesHandler()}
+        >
           {'IR PARA A HOME'}
         </SuccessHomeButton>
       </SuccessContent>
