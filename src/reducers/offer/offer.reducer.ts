@@ -31,5 +31,5 @@ export const offerReducer = createReducer(initialState, (builder) => {
   builder.addCase(setSelectedOffer, (state, action) => ({
     ...state,
     selectedOffer: action.payload,
-  }))
+  }));
 });

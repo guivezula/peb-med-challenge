@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { Grid } from '@mui/material';
 import { useSelector } from 'react-redux';
-import { selectOffers, selectSelectedOffer } from '../../reducers/offer/offer.selectors';
+import {
+  selectOffers,
+  selectSelectedOffer,
+} from '../../reducers/offer/offer.selectors';
 import PaymentForm from '../../components/payment-form/PaymentForm';
 import { Payment } from '../../models/payment.interface';
 import OfferList from '../../components/offer-list/OfferList';
@@ -25,8 +28,9 @@ const Offer: React.FC = () => {
   }, []);
 
   const handlePaymentSubmit = (payment: Partial<Payment>) => {
-    dispatch(postPayment(payment))
-    .then((payment) => !!payment && selectedOffer && navigate("/success"));
+    dispatch(postPayment(payment)).then(
+      (payment) => !!payment && selectedOffer && navigate('/success'),
+    );
   };
 
   return (
@@ -62,10 +66,7 @@ const Offer: React.FC = () => {
           display={'flex'}
           justifyContent={'center'}
         >
-          <OfferList
-            email={loggedUser.email}
-            offers={offers}
-          />
+          <OfferList email={loggedUser.email} offers={offers} />
         </Grid>
       </Grid>
     </>

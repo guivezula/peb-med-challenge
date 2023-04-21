@@ -8,7 +8,7 @@ enum OfferPeriod {
 
 const calcPrice = (offer: Offer): string =>
   (offer.fullPrice - offer.discountAmmount).toFixed(2);
-  
+
 const calcInstallmentsPrice = (offer: Offer): string =>
   ((offer.fullPrice - offer.discountAmmount) / offer.installments).toFixed(2);
 

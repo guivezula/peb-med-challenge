@@ -9,6 +9,4 @@ export const postPayment = createAsyncThunk<
   PaymentService.paymentSubscription(params),
 );
 
-export const resetPayment = createAction(
-  'payment/reset',
-);
+export const resetPayment = createAction('payment/reset');

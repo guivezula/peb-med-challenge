@@ -7,6 +7,6 @@ export const fetchOffers = createAsyncThunk<Offer[]>(
   OfferService.getAll,
 );
 
-export const setSelectedOffer = createAction<Offer | null> (
+export const setSelectedOffer = createAction<Offer | null>(
   'offer/setSelectedOffer',
 );

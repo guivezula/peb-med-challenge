@@ -53,10 +53,7 @@ describe('Payment Reducer', () => {
   });
 
   it('should reset payment on the state', () => {
-    const state = paymentReducer(
-      undefined,
-      resetPayment(),
-    );
+    const state = paymentReducer(undefined, resetPayment());
 
     expect(state).toEqual(
       expect.objectContaining({

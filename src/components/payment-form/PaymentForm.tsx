@@ -32,7 +32,12 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ offer, onSubmit }) => {
   } = useForm<Partial<Payment>>();
 
   const handler = handleSubmit((data) => {
-    data = { ...data, userId: loggedUser.id, offerId: offer?.id, gateway: offer?.gateway };
+    data = {
+      ...data,
+      userId: loggedUser.id,
+      offerId: offer?.id,
+      gateway: offer?.gateway,
+    };
     onSubmit(data);
   });
 
@@ -141,13 +146,11 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ offer, onSubmit }) => {
             <em>Selecione</em>
           </MenuItem>
           {offer &&
-            SharedMapper.getArray(offer.installments).map(
-              (installment) => (
-                <MenuItem key={installment} value={installment}>
-                  {installment}
-                </MenuItem>
-              ),
-            )}
+            SharedMapper.getArray(offer.installments).map((installment) => (
+              <MenuItem key={installment} value={installment}>
+                {installment}
+              </MenuItem>
+            ))}
         </Select>
       </PaymentFormFieldsSection>
       <FormButton

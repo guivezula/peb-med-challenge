@@ -1,6 +1,11 @@
 import { Grid } from '@mui/material';
 import React from 'react';
-import { BackIcon, HeaderContainer, LogoImage } from './Header.styled';
+import {
+  BackIcon,
+  HeaderContainer,
+  LogoContainer,
+  LogoImage,
+} from './Header.styled';
 import logo from '../../img/logo.png';
 
 export interface HeaderProps {
@@ -15,32 +20,10 @@ const Header: React.FC<HeaderProps> = ({ onBack }) => {
   };
   return (
     <HeaderContainer>
-      <Grid container>
-        <Grid
-          item
-          lg={1}
-          md={1}
-          sm={1}
-          xs={1}
-          display={'flex'}
-          alignItems={'center'}
-          justifyContent={'center'}
-        >
-          <BackIcon data-testid="back-icon" onClick={handleBack} />
-        </Grid>
-        <Grid
-          item
-          lg={11}
-          md={11}
-          sm={11}
-          xs={11}
-          display={'flex'}
-          alignItems={'center'}
-          justifyContent={'center'}
-        >
-          <LogoImage data-testid="logo-img" src={logo} />
-        </Grid>
-      </Grid>
+      <BackIcon data-testid="back-icon" onClick={handleBack} />
+      <LogoContainer>
+        <LogoImage data-testid="logo-img" src={logo} />
+      </LogoContainer>
     </HeaderContainer>
   );
 };

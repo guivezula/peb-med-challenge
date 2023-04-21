@@ -68,4 +68,7 @@ export const FormButton = styled(Button)({
   marginTop: 40,
   marginBottom: 64,
   height: 50,
+  '&.MuiButton-root:hover': {
+    backgroundColor: '#151516',
+  },
 });

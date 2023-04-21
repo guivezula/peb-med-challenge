@@ -8,7 +8,7 @@ const renderOfferList = (props: OfferListProps) => {
   return render(
     <Provider store={store}>
       <OfferList {...props} />
-    </Provider>
+    </Provider>,
   );
 };
 
