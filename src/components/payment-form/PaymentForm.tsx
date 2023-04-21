@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { Payment } from '../../models/payment.interface';
 import {
   FormButton,
@@ -10,7 +10,7 @@ import {
   PaymentFormInlineFieldsSection,
   PaymentFormSubHeader,
 } from './PaymentForm.styled';
-import { Button, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { Offer } from '../../models/offer.interface';
 import { PaymentFormMapper } from './PaymentFormMapper.mapper';
 import { useForm } from 'react-hook-form';
