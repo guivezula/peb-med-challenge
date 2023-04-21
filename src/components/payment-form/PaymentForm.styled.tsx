@@ -6,6 +6,9 @@ export const PaymentFormContent = styled.div(() => ({
   fontStyle: 'normal',
   fontWeight: 400,
   width: 330,
+  '@media (max-width: 768px)': {
+    marginTop: '40px',
+  },
 }));
 
 export const PaymentFormHeader = styled.h1(() => ({

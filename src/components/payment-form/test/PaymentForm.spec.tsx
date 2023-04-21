@@ -1,9 +1,5 @@
 import PaymentForm, { PaymentFormProps } from '../PaymentForm';
-import {
-  fireEvent,
-  render,
-  screen,
-} from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { OFFERS_DATA_MOCK, PAYMENT_DATA_MOCK } from '../../../constants/mocks';
 import userEvent from '@testing-library/user-event';
 

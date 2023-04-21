@@ -21,6 +21,7 @@ const Header: React.FC<HeaderProps> = ({ onBack }) => {
           lg={1}
           md={1}
           sm={1}
+          xs={1}
           display={'flex'}
           alignItems={'center'}
           justifyContent={'center'}
@@ -32,6 +33,7 @@ const Header: React.FC<HeaderProps> = ({ onBack }) => {
           lg={11}
           md={11}
           sm={11}
+          xs={11}
           display={'flex'}
           alignItems={'center'}
           justifyContent={'center'}
