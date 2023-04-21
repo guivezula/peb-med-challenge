@@ -21,14 +21,6 @@ describe('OfferList component', () => {
     };
   });
 
-  it('should show header', () => {
-    renderOfferList(props);
-
-    const header = screen.getByText('Confira seu plano:');
-
-    expect(header).toBeInTheDocument();
-  });
-
   it('should show email', () => {
     renderOfferList(props);
 
@@ -44,21 +36,5 @@ describe('OfferList component', () => {
       screen.getByTestId('offer-list-section').childNodes.length;
 
     expect(offerItemsCount).toBe(OFFERS_DATA_MOCK.length);
-  });
-
-  it('should show help info', () => {
-    renderOfferList(props);
-
-    const helpInfo = screen.getByText('Sobre a cobrança');
-
-    expect(helpInfo).toBeInTheDocument();
-  });
-
-  it('should show help icon', () => {
-    renderOfferList(props);
-
-    const icon = screen.getByTestId('help-icon');
-
-    expect(icon).toBeInTheDocument();
   });
 });

@@ -24,11 +24,7 @@ import {
 import successImage from '../../img/success.png';
 import shapeImage from '../../img/shape.png';
 import { OfferMapper } from '../../mapper/offer.mapper';
-import {
-  OFFERS_DATA_MOCK,
-  PAYMENT_DATA_MOCK,
-  USER_MOCK,
-} from '../../constants/mocks';
+import { USER_MOCK } from '../../constants/mocks';
 
 const Success: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -59,10 +55,10 @@ const Success: React.FC = () => {
               <ShapeImage src={shapeImage} />
             </ShapeCircle>
             <div>
-              <SuccessOfferCardText>
+              <SuccessOfferCardText data-testid="success-offer-title">
                 {selectedOffer && OfferMapper.title(selectedOffer)}
               </SuccessOfferCardText>
-              <SuccessOfferCardText>
+              <SuccessOfferCardText data-testid="success-offer-price">
                 {selectedOffer &&
                   OfferMapper.priceWithInstallments(selectedOffer)}
               </SuccessOfferCardText>
@@ -70,11 +66,15 @@ const Success: React.FC = () => {
           </SuccessOfferCard>
           <SuccessUserCardItem>
             <SuccessUserCardText label>{'E-mail'}</SuccessUserCardText>
-            <SuccessUserCardText>{loggedUser.email}</SuccessUserCardText>
+            <SuccessUserCardText data-testid="success-user-email">
+              {loggedUser.email}
+            </SuccessUserCardText>
           </SuccessUserCardItem>
           <SuccessUserCardItem>
             <SuccessUserCardText label>{'CPF'}</SuccessUserCardText>
-            <SuccessUserCardText>{payment?.creditCardCPF}</SuccessUserCardText>
+            <SuccessUserCardText data-testid="success-payment-cpf">
+              {payment?.creditCardCPF}
+            </SuccessUserCardText>
           </SuccessUserCardItem>
         </SuccessUserCard>
         <SuccessManagementLink>{'Gerenciar assinatura'}</SuccessManagementLink>

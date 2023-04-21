@@ -10,3 +10,5 @@ export const postPayment = createAsyncThunk<
 );
 
 export const resetPayment = createAction('payment/reset');
+
+export const setPayment = createAction<Payment | null>('payment/setPayment');
