@@ -2,7 +2,7 @@ import {
   PAYMENT_DATA_MOCK,
   PAYMENT_ERROR_MOCK,
 } from '../../../constants/mocks';
-import { postPayment } from '../payment.actions';
+import { postPayment, resetPayment } from '../payment.actions';
 import { paymentReducer } from '../payment.reducer';
 
 describe('Payment Reducer', () => {
@@ -48,6 +48,19 @@ describe('Payment Reducer', () => {
       expect.objectContaining({
         payment: PAYMENT_DATA_MOCK,
         error: null,
+      }),
+    );
+  });
+
+  it('should reset payment on the state', () => {
+    const state = paymentReducer(
+      undefined,
+      resetPayment(),
+    );
+
+    expect(state).toEqual(
+      expect.objectContaining({
+        payment: null,
       }),
     );
   });

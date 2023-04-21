@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { Payment, PaymentError } from '../../models/payment.interface';
-import { postPayment } from './payment.actions';
+import { postPayment, resetPayment } from './payment.actions';
 
 interface PaymentState {
   payment: Payment | null;
@@ -29,5 +29,10 @@ export const paymentReducer = createReducer(initialState, (builder) => {
     ...state,
     payment: action.payload as Payment,
     error: null,
+  }));
+
+  builder.addCase(resetPayment, (state) => ({
+    ...state,
+    payment: null,
   }));
 });

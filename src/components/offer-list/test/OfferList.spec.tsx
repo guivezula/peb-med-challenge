@@ -1,9 +1,15 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import OfferList, { OfferListProps } from '../OfferList';
 import { OFFERS_DATA_MOCK } from '../../../constants/mocks';
+import { Provider } from 'react-redux';
+import { store } from '../../../app/store';
 
 const renderOfferList = (props: OfferListProps) => {
-  return render(<OfferList {...props} />);
+  return render(
+    <Provider store={store}>
+      <OfferList {...props} />
+    </Provider>
+  );
 };
 
 describe('OfferList component', () => {
@@ -12,7 +18,6 @@ describe('OfferList component', () => {
     props = {
       email: 'any@email.com',
       offers: OFFERS_DATA_MOCK,
-      onSelect: jest.fn(),
     };
   });
 
@@ -39,17 +44,6 @@ describe('OfferList component', () => {
       screen.getByTestId('offer-list-section').childNodes.length;
 
     expect(offerItemsCount).toBe(OFFERS_DATA_MOCK.length);
-  });
-
-  test('should call onSelect when a card is selected', () => {
-    const handler = jest.fn();
-    const localProps = { ...props, onSelect: handler };
-    renderOfferList(localProps);
-
-    const card = screen.getByTestId('offer-card-32');
-    fireEvent.click(card);
-
-    expect(handler).toHaveBeenCalled();
   });
 
   test('should show help info', () => {

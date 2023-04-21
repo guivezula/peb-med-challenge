@@ -1,11 +1,12 @@
 import { OFFERS_DATA_MOCK } from '../../../constants/mocks';
-import { fetchOffers } from '../offer.actions';
+import { fetchOffers, setSelectedOffer } from '../offer.actions';
 import { offerReducer } from '../offer.reducer';
 
 describe('Offer Reducer', () => {
   it('should return the initial state', () => {
     expect(offerReducer(undefined, { type: undefined })).toEqual({
       offers: [],
+      selectedOffer: null,
     });
   });
 
@@ -38,6 +39,19 @@ describe('Offer Reducer', () => {
     expect(state).toEqual(
       expect.objectContaining({
         offers: OFFERS_DATA_MOCK,
+      }),
+    );
+  });
+
+  it('should add the selected offer to the state', () => {
+    const state = offerReducer(
+      undefined,
+      setSelectedOffer(OFFERS_DATA_MOCK[0]),
+    );
+
+    expect(state).toEqual(
+      expect.objectContaining({
+        selectedOffer: OFFERS_DATA_MOCK[0],
       }),
     );
   });

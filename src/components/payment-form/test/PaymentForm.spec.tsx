@@ -13,7 +13,7 @@ describe('PaymentForm component', () => {
 
   beforeAll(() => {
     props = {
-      offer: undefined,
+      offer: null,
       onSubmit: handler,
     };
   });
@@ -27,7 +27,7 @@ describe('PaymentForm component', () => {
     expect(handler).not.toBeCalled();
   });
 
-  test('should not call onSubmit when offer is undefined', async () => {
+  test('should not call onSubmit when offer is null', async () => {
     const { getByTestId } = renderForm(props);
 
     const field1 = getByTestId('creditCardNumber').querySelector(

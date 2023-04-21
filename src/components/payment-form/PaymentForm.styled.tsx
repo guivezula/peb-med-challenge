@@ -67,4 +67,5 @@ export const FormButton = styled(Button)({
   lineHeight: '18px',
   marginTop: 40,
   marginBottom: 64,
+  height: 50,
 });

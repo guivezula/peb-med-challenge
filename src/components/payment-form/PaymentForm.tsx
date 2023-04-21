@@ -12,16 +12,19 @@ import {
 } from './PaymentForm.styled';
 import { InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import { Offer } from '../../models/offer.interface';
-import { PaymentFormMapper } from './PaymentFormMapper.mapper';
+import { SharedMapper } from '../../mapper/shared.mapper';
 import { useForm } from 'react-hook-form';
 import brands from '../../img/brands.png';
+import { USER_MOCK } from '../../constants/mocks';
 
 export interface PaymentFormProps {
-  offer: Offer | undefined;
+  offer: Offer | null;
   onSubmit: (payment: Partial<Payment>) => void;
 }
 
 const PaymentForm: React.FC<PaymentFormProps> = ({ offer, onSubmit }) => {
+  const loggedUser = USER_MOCK;
+
   const {
     register,
     handleSubmit,
@@ -29,7 +32,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ offer, onSubmit }) => {
   } = useForm<Partial<Payment>>();
 
   const handler = handleSubmit((data) => {
-    data = { ...data, userId: 1, offerId: offer?.id, gateway: offer?.gateway };
+    data = { ...data, userId: loggedUser.id, offerId: offer?.id, gateway: offer?.gateway };
     onSubmit(data);
   });
 
@@ -138,7 +141,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ offer, onSubmit }) => {
             <em>Selecione</em>
           </MenuItem>
           {offer &&
-            PaymentFormMapper.getArray(offer.installments).map(
+            SharedMapper.getArray(offer.installments).map(
               (installment) => (
                 <MenuItem key={installment} value={installment}>
                   {installment}

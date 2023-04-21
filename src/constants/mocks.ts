@@ -1,5 +1,6 @@
 import { Offer } from '../models/offer.interface';
 import { Payment, PaymentError } from '../models/payment.interface';
+import { User } from '../models/user.interface';
 
 export const OFFERS_DATA_MOCK: Offer[] = [
   {
@@ -58,4 +59,9 @@ export const PAYMENT_DATA_MOCK: Payment = {
 
 export const PAYMENT_ERROR_MOCK: PaymentError = {
   error: 'some error',
+};
+
+export const USER_MOCK: User = {
+  email: 'fulano@cicrano.com.br',
+  id: 1,
 };

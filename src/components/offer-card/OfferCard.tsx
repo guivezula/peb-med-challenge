@@ -11,7 +11,7 @@ import {
   PlanOfferRadioSection,
   PlanOfferTitle,
 } from './OfferCard.styled';
-import { OfferMapper } from './OfferCard.mapper';
+import { OfferMapper } from '../../mapper/offer.mapper';
 
 export interface OfferCardProps {
   offer: Offer;

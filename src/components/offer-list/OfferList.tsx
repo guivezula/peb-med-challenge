@@ -9,19 +9,21 @@ import {
   PlanOfferListHelpIcon,
   PlanOfferListSection,
 } from './OfferList.syled';
+import { useAppDispatch } from '../../app/hooks';
+import { setSelectedOffer } from '../../reducers/offer/offer.actions';
 
 export interface OfferListProps {
   offers: Offer[];
   email: string;
-  onSelect: (offer: Offer) => void;
 }
 
-const OfferList: React.FC<OfferListProps> = ({ offers, email, onSelect }) => {
+const OfferList: React.FC<OfferListProps> = ({ offers, email }) => {
   const [checkedOffer, setCheckedOffer] = useState<Offer>();
+  const dispatch = useAppDispatch();
 
   const handleSelectedOffer = (offer: Offer) => {
     setCheckedOffer(offer);
-    onSelect(offer);
+    dispatch(setSelectedOffer(offer));
   };
 
   return (
