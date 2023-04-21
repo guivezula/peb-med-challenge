@@ -6,7 +6,7 @@ const renderHeader = (props?: { onBack?: () => void }) => {
 };
 
 describe('Header component', () => {
-  test('should render icon', () => {
+  it('should render icon', () => {
     renderHeader();
 
     const icon = screen.getByTestId('back-icon');
@@ -14,7 +14,7 @@ describe('Header component', () => {
     expect(icon).toBeInTheDocument();
   });
 
-  test('should render image', () => {
+  it('should render image', () => {
     renderHeader();
 
     const img = screen.getByTestId('logo-img');
@@ -22,7 +22,7 @@ describe('Header component', () => {
     expect(img).toBeInTheDocument();
   });
 
-  test('should call handler when icon clicked', () => {
+  it('should call handler when icon clicked', () => {
     const handler = jest.fn();
 
     renderHeader({ onBack: handler });
@@ -33,7 +33,7 @@ describe('Header component', () => {
     expect(handler).toBeCalled();
   });
 
-  test('should not call handler when onBack is not present', () => {
+  it('should not call handler when onBack is not present', () => {
     const handler = jest.fn();
 
     renderHeader();

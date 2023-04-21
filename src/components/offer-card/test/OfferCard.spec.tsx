@@ -18,7 +18,7 @@ describe('OfferCard component', () => {
     };
   });
 
-  test('should show formatted offer title', () => {
+  it('should show formatted offer title', () => {
     renderOfferCard(props);
 
     const title = screen.getByText('Anual | Parcelado');
@@ -26,7 +26,7 @@ describe('OfferCard component', () => {
     expect(title).toBeInTheDocument();
   });
 
-  test('should show formatted price', () => {
+  it('should show formatted price', () => {
     renderOfferCard(props);
 
     const price = screen.getByText('De R$ 600.00 | Por R$ 540.00');
@@ -34,7 +34,7 @@ describe('OfferCard component', () => {
     expect(price).toBeInTheDocument();
   });
 
-  test('should show formmated porcentage', () => {
+  it('should show formmated porcentage', () => {
     renderOfferCard(props);
 
     const porcentage = screen.getByText('-10%');
@@ -42,7 +42,7 @@ describe('OfferCard component', () => {
     expect(porcentage).toBeInTheDocument();
   });
 
-  test('should show formmated installments', () => {
+  it('should show formmated installments', () => {
     renderOfferCard(props);
 
     const installments = screen.getByText('12x de R$ 45.00/mês');
@@ -50,7 +50,7 @@ describe('OfferCard component', () => {
     expect(installments).toBeInTheDocument();
   });
 
-  test('should card to be checked', () => {
+  it('should card to be checked', () => {
     const localProps = { ...props, checked: true };
     const { container } = renderOfferCard(localProps);
 
@@ -59,7 +59,7 @@ describe('OfferCard component', () => {
     expect(checkedClass.length).toBe(1);
   });
 
-  test('should card not to be checked', () => {
+  it('should card not to be checked', () => {
     const { container } = renderOfferCard(props);
 
     const checkedClass = container.getElementsByClassName('Mui-checked');
@@ -67,7 +67,7 @@ describe('OfferCard component', () => {
     expect(checkedClass.length).toBe(0);
   });
 
-  test('should call handler when radio selected', () => {
+  it('should call handler when radio selected', () => {
     const handler = jest.fn();
     const localProps = { ...props, onSelect: handler };
 

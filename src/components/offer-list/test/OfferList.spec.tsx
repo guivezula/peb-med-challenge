@@ -21,7 +21,7 @@ describe('OfferList component', () => {
     };
   });
 
-  test('should show header', () => {
+  it('should show header', () => {
     renderOfferList(props);
 
     const header = screen.getByText('Confira seu plano:');
@@ -29,7 +29,7 @@ describe('OfferList component', () => {
     expect(header).toBeInTheDocument();
   });
 
-  test('should show email', () => {
+  it('should show email', () => {
     renderOfferList(props);
 
     const email = screen.getByText('any@email.com');
@@ -37,7 +37,7 @@ describe('OfferList component', () => {
     expect(email).toBeInTheDocument();
   });
 
-  test('should render offer list', () => {
+  it('should render offer list', () => {
     renderOfferList(props);
 
     const offerItemsCount =
@@ -46,7 +46,7 @@ describe('OfferList component', () => {
     expect(offerItemsCount).toBe(OFFERS_DATA_MOCK.length);
   });
 
-  test('should show help info', () => {
+  it('should show help info', () => {
     renderOfferList(props);
 
     const helpInfo = screen.getByText('Sobre a cobrança');
@@ -54,7 +54,7 @@ describe('OfferList component', () => {
     expect(helpInfo).toBeInTheDocument();
   });
 
-  test('should show help icon', () => {
+  it('should show help icon', () => {
     renderOfferList(props);
 
     const icon = screen.getByTestId('help-icon');

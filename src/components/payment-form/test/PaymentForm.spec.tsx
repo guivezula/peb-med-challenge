@@ -18,7 +18,7 @@ describe('PaymentForm component', () => {
     };
   });
 
-  test('should not call onSubmit when no fields filled', async () => {
+  it('should not call onSubmit when no fields filled', async () => {
     renderForm(props);
 
     const button = screen.getByTestId('button-submit');
@@ -27,7 +27,7 @@ describe('PaymentForm component', () => {
     expect(handler).not.toBeCalled();
   });
 
-  test('should not call onSubmit when offer is null', async () => {
+  it('should not call onSubmit when offer is null', async () => {
     const { getByTestId } = renderForm(props);
 
     const field1 = getByTestId('creditCardNumber').querySelector(
@@ -67,7 +67,7 @@ describe('PaymentForm component', () => {
     expect(handler).not.toBeCalled();
   });
 
-  test('should call onSubmit when all fields filled', async () => {
+  it('should call onSubmit when all fields filled', async () => {
     const localhandler = jest.fn();
     const { getByTestId } = renderForm({
       ...props,
