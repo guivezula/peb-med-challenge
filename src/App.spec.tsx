@@ -97,7 +97,7 @@ describe('Integration Test', () => {
       if (req.url.includes('subscription')) {
         return Promise.resolve(JSON.stringify(PAYMENT_DATA_MOCK));
       }
-  
+
       return Promise.reject(new Error('not mapped url'));
     });
 

@@ -17,8 +17,6 @@ Abre o app em modo desenvolvimento
 Rodar os testes unitários e de integração. Cada componente e/ou página possui um folder test.
 O teste de integração está no arquivo App.spect.tsx, onde é testado todo o flow do projeto.
 
-
-
 ### `npm run format`
 
 Formata todos os arquivos de acordo com as regras do lint e do prettier.

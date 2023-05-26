@@ -16,6 +16,8 @@ import { SharedMapper } from '../../mapper/shared.mapper';
 import { useForm } from 'react-hook-form';
 import brands from '../../img/brands.png';
 import { USER_MOCK } from '../../constants/mocks';
+import { MaskedInput } from './utils/masked-input.utils';
+import { DateFormatUtils } from './utils/date-format.utils';
 
 export interface PaymentFormProps {
   offer: Offer | null;
@@ -57,29 +59,42 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ offer, onSubmit }) => {
           label="Número do cartão"
           variant="standard"
           error={!!errors.creditCardNumber}
-          inputProps={{ placeholder: '0000 0000 0000 0000' }}
+          inputProps={{
+            placeholder: '0000 0000 0000 0000',
+            mask: '9999 9999 9999 9999',
+          }}
           InputLabelProps={{
             shrink: true,
+          }}
+          InputProps={{
+            inputComponent: MaskedInput as any,
           }}
           {...register('creditCardNumber', { required: true })}
         />
         <PaymentFormInlineFieldsSection>
-          <TextField
+          <FormTextField
             data-testid="creditCardExpirationDate"
             label="Validade"
             variant="standard"
-            inputProps={{ placeholder: 'MM/AA' }}
+            inputProps={{
+              placeholder: 'MM/AA',
+              mask: DateFormatUtils.mask,
+              formatChars: DateFormatUtils.formatChars,
+              beforeMaskedValueChange: DateFormatUtils.beforeMaskedValueChange,
+            }}
             error={!!errors.creditCardExpirationDate}
             InputLabelProps={{
               shrink: true,
             }}
+            InputProps={{ inputComponent: MaskedInput as any }}
             {...register('creditCardExpirationDate', { required: true })}
           />
-          <TextField
+          <FormTextField
             data-testid="creditCardCVV"
             label="CVV"
             variant="standard"
-            inputProps={{ placeholder: '000' }}
+            inputProps={{ placeholder: '000', mask: '999' }}
+            InputProps={{ inputComponent: MaskedInput as any }}
             error={!!errors.creditCardCVV}
             InputLabelProps={{
               shrink: true,
@@ -87,7 +102,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ offer, onSubmit }) => {
             {...register('creditCardCVV', { required: true })}
           />
         </PaymentFormInlineFieldsSection>
-        <TextField
+        <FormTextField
           data-testid="creditCardHolder"
           fullWidth
           label="Nome impresso no cartão"
@@ -99,19 +114,20 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ offer, onSubmit }) => {
           }}
           {...register('creditCardHolder', { required: true })}
         />
-        <TextField
+        <FormTextField
           data-testid="creditCardCPF"
           fullWidth
           label="CPF"
           variant="standard"
-          inputProps={{ placeholder: '000.000.000-00' }}
+          inputProps={{ placeholder: '000.000.000-00', mask: '999.999.999-99' }}
+          InputProps={{ inputComponent: MaskedInput as any }}
           error={!!errors.creditCardCPF}
           InputLabelProps={{
             shrink: true,
           }}
           {...register('creditCardCPF', { required: true })}
         />
-        <TextField
+        <FormTextField
           fullWidth
           label="Cupom"
           variant="standard"
